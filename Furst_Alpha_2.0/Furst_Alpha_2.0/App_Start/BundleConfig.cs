@@ -25,6 +25,7 @@ namespace Furst_Alpha_2._0
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/DAWStyleSheet.css",
                       "~/Content/site.css"));
         }
     }

@@ -1,0 +1,13 @@
+﻿body {
+    background-color: #000000;
+}
+
+.body-content {
+    background-color: #cccccc;
+}
+
+.btn-emergency {
+  color: #333333;
+  background-color: #ff0000;
+  border-color: #cccccc;
+}
