@@ -25,6 +25,14 @@ namespace Furst_Alpha_2._0.Models
         {
         }
 
+        public DbSet<Assets> Assets { get; set; }
+        public DbSet<Vendors> Vendors { get; set; }
+        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Types> Types { get; set; }
+        public DbSet<Makes> Makes { get; set; }
+        public DbSet<Models> Models { get; set; }
+        public DbSet<Quantities> Quantities { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
