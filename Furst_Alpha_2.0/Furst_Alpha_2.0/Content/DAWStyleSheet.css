@@ -7,7 +7,22 @@
 }
 
 .btn-emergency {
-  color: #333333;
-  background-color: #ff0000;
-  border-color: #cccccc;
+  color: #000000;
+  background-color: #DA291C;
+  border-color: #000000;
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+.navbar-inverse {
+    background-color: #cccccc;
+    border-color: #080808;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #000000;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #000000;
 }
