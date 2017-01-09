@@ -206,6 +206,10 @@
     <Compile Include="Migrations\201701072358345_Initial.Designer.cs">
       <DependentUpon>201701072358345_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701092235108_NewBarcode.cs" />
+    <Compile Include="Migrations\201701092235108_NewBarcode.Designer.cs">
+      <DependentUpon>201701092235108_NewBarcode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assets.cs" />
@@ -299,6 +303,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701072358345_Initial.resx">
       <DependentUpon>201701072358345_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701092235108_NewBarcode.resx">
+      <DependentUpon>201701092235108_NewBarcode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

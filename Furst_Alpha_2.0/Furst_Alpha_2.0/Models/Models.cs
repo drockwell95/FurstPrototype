@@ -9,7 +9,6 @@ namespace Furst_Alpha_2._0.Models
     public class Models
     {
         [Key]
-        [Range(0, 99)]
         public int ModelId { get; set; }
         public string ModelName { get; set; }
 

@@ -118,7 +118,7 @@ namespace Furst_Alpha_2._0.Migrations
 
             var vendors = new List<Vendors>
             {
-                new Vendors {VendorId = 01, VendorName = "Atlanta Special FX" }
+                new Vendors {VendorId = 01, VendorName = "Atlanta Special FX", NextBarcode = 33 }
             };
             vendors.ForEach(s => context.Vendors.AddOrUpdate(p => p.VendorName, s));
             //context.SaveChanges();
@@ -127,7 +127,7 @@ namespace Furst_Alpha_2._0.Migrations
             {
                 new Assets{
                     AssetId = 000000001,
-                    Vendor = vendors.Single(s => s.VendorId == 1),
+                    Vendor = vendors.Single(s => s.VendorName == "Atlanta Special FX"),
                     Category = categories.Single(s => s.CategoryName == "Stage Effects"),
                     Type = types.Single(s => s.TypeName == "Fog"),
                     Make = makes.Single(s => s.MakeName == "Antari"),
@@ -831,49 +831,24 @@ namespace Furst_Alpha_2._0.Migrations
                     Model = models.Single(s => s.ModelName == "Extreme Foam Machine - EFM110"),
                     total = 0,
                     InUse = 0
-                }
+                },
             };
 
 
             foreach (Quantities q in quantities)
             {
-                //    var qtyInDataBase = context.Quantities.Where(
-                //        s => s.QuantityId == q.QuantityId).SingleOrDefault();
-                //    if (qtyInDataBase == null)
-                {
-                    q.total += 1;
-                    q.InUse += 1;
-                    //        context.Quantities.Add(q);
-                }
-            }
-            //context.SaveChanges();
+                q.total += 1;
+                q.InUse += 1;                  
+            }  
             quantities.ForEach(s => context.Quantities.AddOrUpdate(p => p.QuantityId, s));
 
-            // assets.ForEach(s => context.Assets.AddOrUpdate(p => p.AssetId, s));
+            
             foreach (Assets a in assets)
-            {
-                //var assetInDataBase = context.Assets.Where(
-                // s => s.AssetId == a.AssetId).SingleOrDefault();
-                //if (assetInDataBase == null)
-                //{
-                var qty = quantities.Where(
-                    q => q.Vendor.VendorId == a.Vendor.VendorId).Where(
-                    q => q.Make.MakeId == a.Make.MakeId).Where(
-                    q => q.Model.ModelId == a.Model.ModelId).SingleOrDefault();
-                var part1 = (a.Vendor.VendorId + 1000).ToString();
-                var part2 = (a.Make.MakeId + 100).ToString();
-                var part3 = (a.Model.ModelId + 100).ToString();
-                var part4 = "9939";
-                if (qty != null)
-                {
-                    part4 = (qty.total + 10000).ToString();
-                }
-
-                a.Barcode = part1.Substring(1) + part2.Substring(1) + part3.Substring(1) + part4.Substring(1);
-                // context.Assets.Add(a);
-                //}
+            {                
+                var part1 = (a.Vendor.VendorId + 1000).ToString();                
+                var part4 = (10000000 + a.AssetId).ToString();             
+                a.Barcode = part1.Substring(1) + part4.Substring(1);
             }
-            //context.SaveChanges();
             assets.ForEach(s => context.Assets.AddOrUpdate(p => p.AssetId, s));
         }
     }

@@ -12,6 +12,8 @@ namespace Furst_Alpha_2._0.Models
         [Range(0, 999)]
         public int VendorId { get; set; }
         public string VendorName { get; set; }
+        [Range(1, 19999999)]
+        public int NextBarcode { get; set; }
 
         public ICollection<Assets> Assets { get; set; }
     }

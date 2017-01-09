@@ -9,7 +9,6 @@ namespace Furst_Alpha_2._0.Models
     public class Makes
     {
         [Key]
-        [Range(0, 99)]
         public int MakeId { get; set; }
         public string MakeName { get; set; }
 
