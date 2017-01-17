@@ -4,13 +4,15 @@
     ViewBag.Title = "Index";
 }
 
+@{var imagesrc = "https://midatlanticskinsurgery.com/wp-content/uploads/2016/08/Product-Coming-Soon-image-600x600.png";}
+
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
+   @* <tr>
         <th>
             @Html.DisplayNameFor(model => model.Barcode)
         </th>
@@ -30,34 +32,34 @@
             @Html.DisplayNameFor(model => model.Availability)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Barcode)
+           @* @{ imagesrc = item.Image;}*@
+            <img src="@imagesrc" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
+            <ul>
+                <li>Year: @Html.DisplayFor(modelItem => item.YearPurchased)</li>
+                <li>Number of Technicians Required: @Html.DisplayFor(modelItem => item.NumTechsReq)</li>
+            </ul>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.YearPurchased)
+            <ul>
+                <li>Price: @Html.DisplayFor(modelItem => item.RentalPrice)</li>
+                <li> Availability: @Html.DisplayFor(modelItem => item.Availability)</li>
+            </ul>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RentalPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumTechsReq)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Availability)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AssetId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AssetId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AssetId })
+            <ul>
+                <li>@Html.ActionLink("Product Details", "Details", new { id = item.AssetId })</li>
+            </ul>
         </td>
     </tr>
 }
 
 </table>
+
+
