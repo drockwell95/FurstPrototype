@@ -26,3 +26,13 @@
 .navbar-inverse .navbar-nav > li > a {
     color: #000000;
 }
+
+body {
+    font-family: "Elephant", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+}
