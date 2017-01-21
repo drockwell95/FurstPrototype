@@ -1,6 +1,8 @@
 namespace Furst_Alpha_2._0.Migrations
 {
     using Furst_Alpha_2._0.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -840,7 +842,7 @@ namespace Furst_Alpha_2._0.Migrations
                 q.total += 1;
                 q.InUse += 1;                  
             }  
-            quantities.ForEach(s => context.Quantities.AddOrUpdate(p => p.QuantityId, s));
+           // quantities.ForEach(s => context.Quantities.AddOrUpdate(p => p.QuantityId, s));
 
             
             foreach (Assets a in assets)
@@ -849,7 +851,23 @@ namespace Furst_Alpha_2._0.Migrations
                 var part4 = (10000000 + a.AssetId).ToString();             
                 a.Barcode = part1.Substring(1) + part4.Substring(1);
             }
-            assets.ForEach(s => context.Assets.AddOrUpdate(p => p.AssetId, s));
+            //assets.ForEach(s => context.Assets.AddOrUpdate(p => p.AssetId, s));
+
+
+            var RoleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            string[] roleNames = { "Admin", "Vendor", "Preferred Customer", "Customer" };
+            IdentityResult roleResult;
+            foreach(var roleName in roleNames)
+            {
+                if (!RoleManager.RoleExists(roleName))
+                {
+                    roleResult = RoleManager.Create(new IdentityRole(roleName));
+                }
+            }
+
+        
         }
+
+        
     }
 }
