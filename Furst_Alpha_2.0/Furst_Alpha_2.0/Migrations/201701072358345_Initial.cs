@@ -10,20 +10,20 @@ namespace Furst_Alpha_2._0.Migrations
             CreateTable(
                 "dbo.Assets",
                 c => new
-                    {
-                        AssetId = c.Int(nullable: false, identity: true),
-                        Barcode = c.String(),
-                        Image = c.String(),
-                        YearPurchased = c.Int(nullable: false),
-                        RentalPrice = c.Double(nullable: false),
-                        NumTechsReq = c.Int(nullable: false),
-                        Availability = c.Boolean(nullable: false),
-                        Category_CategoryId = c.Int(),
-                        Make_MakeId = c.Int(),
-                        Model_ModelId = c.Int(),
-                        Type_TypeId = c.Int(),
-                        Vendor_VendorId = c.Int(),
-                    })
+                {
+                    AssetId = c.Int(nullable: false, identity: true),
+                    Barcode = c.String(),
+                    Image = c.String(),
+                    YearPurchased = c.Int(nullable: false),
+                    RentalPrice = c.Double(nullable: false),
+                    NumTechsReq = c.Int(nullable: false),
+                    Availability = c.Boolean(nullable: false),
+                    Category_CategoryId = c.Int(),
+                    Make_MakeId = c.Int(),
+                    Model_ModelId = c.Int(),
+                    Type_TypeId = c.Int(),
+                    Vendor_VendorId = c.Int(),
+                })
                 .PrimaryKey(t => t.AssetId)
                 .ForeignKey("dbo.Categories", t => t.Category_CategoryId)
                 .ForeignKey("dbo.Makes", t => t.Make_MakeId)
@@ -35,7 +35,7 @@ namespace Furst_Alpha_2._0.Migrations
                 .Index(t => t.Model_ModelId)
                 .Index(t => t.Type_TypeId)
                 .Index(t => t.Vendor_VendorId);
-            
+
             CreateTable(
                 "dbo.Categories",
                 c => new
@@ -80,18 +80,18 @@ namespace Furst_Alpha_2._0.Migrations
                         VendorName = c.String(),
                     })
                 .PrimaryKey(t => t.VendorId);
-            
+
             CreateTable(
                 "dbo.Quantities",
                 c => new
-                    {
-                        QuantityId = c.Int(nullable: false, identity: true),
-                        total = c.Int(nullable: false),
-                        InUse = c.Int(nullable: false),
-                        Make_MakeId = c.Int(),
-                        Model_ModelId = c.Int(),
-                        Vendor_VendorId = c.Int(),
-                    })
+                {
+                    QuantityId = c.Int(nullable: false, identity: true),
+                    total = c.Int(nullable: false),
+                    InUse = c.Int(nullable: false),
+                    Make_MakeId = c.Int(),
+                    Model_ModelId = c.Int(),
+                    Vendor_VendorId = c.Int(),
+                })
                 .PrimaryKey(t => t.QuantityId)
                 .ForeignKey("dbo.Makes", t => t.Make_MakeId)
                 .ForeignKey("dbo.Models", t => t.Model_ModelId)
@@ -99,7 +99,7 @@ namespace Furst_Alpha_2._0.Migrations
                 .Index(t => t.Make_MakeId)
                 .Index(t => t.Model_ModelId)
                 .Index(t => t.Vendor_VendorId);
-            
+
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -139,6 +139,7 @@ namespace Furst_Alpha_2._0.Migrations
                         LockoutEnabled = c.Boolean(nullable: false),
                         AccessFailedCount = c.Int(nullable: false),
                         UserName = c.String(nullable: false, maxLength: 256),
+                        Role = c.String()
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");

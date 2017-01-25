@@ -41,6 +41,7 @@
             <img src="@imagesrc" />
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Make) @Html.DisplayFor(modelItem => item.Model)
             <ul>
                 <li>Year: @Html.DisplayFor(modelItem => item.YearPurchased)</li>
                 <li>Number of Technicians Required: @Html.DisplayFor(modelItem => item.NumTechsReq)</li>
@@ -49,7 +50,8 @@
         <td>
             <ul>
                 <li>Price: @Html.DisplayFor(modelItem => item.RentalPrice)</li>
-                <li> Availability: @Html.DisplayFor(modelItem => item.Availability)</li>
+                <li>Availability: @Html.DisplayFor(modelItem => item.Availability)</li>
+                <li><button>Add To Cart</button></li>
             </ul>
         </td>
         <td>

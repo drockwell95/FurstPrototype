@@ -9,6 +9,11 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Furst_Alpha_2._0.Models;
+using System.Web.Security;
+using System.Collections;
+using System.Collections.Generic;
+
+
 
 namespace Furst_Alpha_2._0.Controllers
 {
@@ -17,6 +22,7 @@ namespace Furst_Alpha_2._0.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -139,6 +145,14 @@ namespace Furst_Alpha_2._0.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            //ViewBag.AcctRoles = new SelectList(db.Roles, "Name", "Name");
+            
+
+            //List<SelectListItem> list = new List<SelectListItem>() {
+            //    new SelectListItem(){ Value="Vendor", Text="Vendor"},
+            //};
+
+           // ViewBag.AcctRoles = new SelectList(list, "Value", "Text");
             return View();
         }
 
@@ -155,6 +169,8 @@ namespace Furst_Alpha_2._0.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, model.Role);
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
@@ -371,6 +387,7 @@ namespace Furst_Alpha_2._0.Controllers
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
+                    await UserManager.AddToRoleAsync(user.Id, model.Role);
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {

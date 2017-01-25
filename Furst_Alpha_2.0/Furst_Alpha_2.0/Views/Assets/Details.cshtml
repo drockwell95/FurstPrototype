@@ -4,63 +4,40 @@
     ViewBag.Title = "Details";
 }
 
+@{var imagesrc = "https://midatlanticskinsurgery.com/wp-content/uploads/2016/08/Product-Coming-Soon-image-600x600.png";}
+
+
 <h2>Details</h2>
 
 <div>
     <h4>Assets</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Barcode)
-        </dt>
+    <table class="table">
+        <tr>
+            <td>
+                @* @{ imagesrc = item.Image;}*@
+                <img src="@imagesrc" />
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Make) @Html.DisplayFor(model => model.Model)
+                <ul>
+                    <li>Year: @Html.DisplayFor(model => model.YearPurchased)</li>
+                    <li>Number of Technicians Required: @Html.DisplayFor(model => model.NumTechsReq)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Price: @Html.DisplayFor(model => model.RentalPrice)</li>
+                    <li>Availability: @Html.DisplayFor(model => model.Availability)</li>
+                    <li><button>Add To Cart</button></li>
+                </ul>
+            </td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Barcode)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.YearPurchased)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.YearPurchased)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RentalPrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RentalPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NumTechsReq)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NumTechsReq)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Availability)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Availability)
-        </dd>
-
-    </dl>
+        @User.Identity.
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AssetId }) |
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.AssetId }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>
