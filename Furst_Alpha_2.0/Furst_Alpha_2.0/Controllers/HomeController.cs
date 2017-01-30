@@ -84,7 +84,7 @@ namespace Furst_Alpha_2._0.Controllers
             if (address == null)
             {
                 ViewData["ResultsCount"] = context.VendorWarehouses.Count();
-                return View(context.VendorWarehouses.ToList());
+                return View();
             }
 
             // Get the lat/long info about the address
@@ -99,42 +99,32 @@ namespace Furst_Alpha_2._0.Controllers
 
 
             var nearbyStores = from warehouse in context.VendorWarehouses
-                               where Math.Abs(warehouse.Latitude - lat) < 0.25M &&
-                                     Math.Abs(warehouse.Longitude - lng) < 0.25M
+                               //where Math.Abs(warehouse.Latitude - lat) < 0.25M &&
+                               //      Math.Abs(warehouse.Longitude - lng) < 0.25M
                                select warehouse;
 
+            var nearbyWarehouses = nearbyStores.Where(x => x.VendorWarehouseId > 0).ToList()
+                                .Select(x => new NearbyVendorWarehouseLocation
+                                {
+                                    VendorWarehouseId = x.VendorWarehouseId,
+                                    Address = x.Address,
+                                    City = x.City,
+                                    Region = x.Region,
+                                    CountryCode = x.CountryCode,
+                                    PostalCode = x.PostalCode,
+                                    Latitude = x.Latitude,
+                                    Longitude = x.Longitude,
+                                    AddressLatitude = lat,
+                                    AddressLongitude = lng
+                                }).ToList();
 
-            ViewData["ResultsCount"] = context.VendorWarehouses.Count();
-            return View(context.VendorWarehouses.ToList());
 
-            //var nearbyWarehouses = nearbyStores.Where(x => x.VendorWarehouseId > 0).ToList()
-            //                    .Select(x => new NearbyVendorWarehouseLocation
-            //                    {
-            //                        VendorWarehouseId = x.VendorWarehouseId,
-            //                        Address = x.Address,
-            //                        City = x.City,
-            //                        Region = x.Region,
-            //                        CountryCode = x.CountryCode,
-            //                        PostalCode = x.PostalCode,
-            //                        Latitude = x.Latitude,
-            //                        Longitude = x.Longitude,
-            //                        AddressLatitude = lat,
-            //                        AddressLongitude = lng
-            //                    }).ToList(); 
+            var nearbySortedVendorWarehouses = nearbyWarehouses.ToList().OrderBy(s => s.DistanceFromAddress).Take(100).ToList();
+
+            //return View(nearbyStores);
+            ViewData["ResultsCount"] = nearbySortedVendorWarehouses.Count();
+            return View(nearbySortedVendorWarehouses);
             
-
-            //var nearbySortedVendorWarehouses = nearbyWarehouses.ToList().OrderBy(s => s.DistanceFromAddress).ToList();
-
-            
-            //if (nearbySortedVendorWarehouses.Count == 0)
-            //{
-            //    return View(nearbyStores);
-            //}
-            //else
-            //{
-            //    //return View(nearbyStores);
-            //    return View(nearbySortedVendorWarehouses);
-            //}
         }
     }
 }
