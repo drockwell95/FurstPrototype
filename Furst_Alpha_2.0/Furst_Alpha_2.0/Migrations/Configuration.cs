@@ -875,10 +875,70 @@ namespace Furst_Alpha_2._0.Migrations
                     PostalCode = "30046",
                     Latitude = Convert.ToDecimal(33.978409),
                     Longitude = Convert.ToDecimal(-83.974508),
-                    Vendor = vendors.Single(s => s.VendorId == 1)}
-                
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
+                new VendorWarehouses {VendorWarehouseId = 02,
+                    Address = "519 Hurricane Shoals Road, Bld 2, Unit G",
+                    City = "Lawrenceville",
+                    Region = "GA",
+                    CountryCode = "US",
+                    PostalCode = "30043",
+                    Latitude = Convert.ToDecimal(34.0130092),
+                    Longitude = Convert.ToDecimal(-84.0396261),
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
+                new VendorWarehouses {VendorWarehouseId = 03,
+                    Address = "519 Hurricane Shoals Road, Bld 2, Unit G",
+                    City = "Lawrenceville",
+                    Region = "GA",
+                    CountryCode = "US",
+                    PostalCode = "30019",
+                    Latitude = Convert.ToDecimal(33.9513322),
+                    Longitude = Convert.ToDecimal(-84.0338827),
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
+                new VendorWarehouses {VendorWarehouseId = 04,
+                    Address = "519 Hurricane Shoals Road, Bld 2, Unit G",
+                    City = "Lawrenceville",
+                    Region = "GA",
+                    CountryCode = "US",
+                    PostalCode = "30044",
+                    Latitude = Convert.ToDecimal(33.9209542),
+                    Longitude = Convert.ToDecimal(-84.1388478),
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
+                new VendorWarehouses {VendorWarehouseId = 05,
+                    Address = "519 Hurricane Shoals Road, Bld 2, Unit G",
+                    City = "Lawrenceville",
+                    Region = "GA",
+                    CountryCode = "US",
+                    PostalCode = "30045",
+                    Latitude = Convert.ToDecimal(33.9349521),
+                    Longitude = Convert.ToDecimal(-84.0002569),
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
+                new VendorWarehouses {VendorWarehouseId = 06,
+                    Address = "519 Hurricane Shoals Road, Bld 2, Unit G",
+                    City = "Lawrenceville",
+                    Region = "GA",
+                    CountryCode = "US",
+                    PostalCode = "30017",
+                    Latitude = Convert.ToDecimal(33.8903623),
+                    Longitude = Convert.ToDecimal(-83.9960376),
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
+                new VendorWarehouses {VendorWarehouseId = 07,
+                    Address = "519 Hurricane Shoals Road, Bld 2, Unit G",
+                    City = "Lawrenceville",
+                    Region = "GA",
+                    CountryCode = "US",
+                    PostalCode = "30078",
+                    Latitude = Convert.ToDecimal(33.8633488),
+                    Longitude = Convert.ToDecimal(-84.0432907),
+                    Vendor = vendors.Single(s => s.VendorId == 1)},
+
             };
-            //warehouses.ForEach(s => context.VendorWarehouses.AddOrUpdate(p => p.VendorWarehouseId, s));
+            warehouses.ForEach(s => context.VendorWarehouses.AddOrUpdate(p => p.VendorWarehouseId, s));
 
 
         }
