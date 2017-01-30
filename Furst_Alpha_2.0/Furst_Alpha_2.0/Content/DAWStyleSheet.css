@@ -44,3 +44,8 @@ body {
 .furstLogoNav {
     height: 60px;
 }
+
+.furstProducts > img {
+    height: 90px;
+    padding: 4px;
+}
