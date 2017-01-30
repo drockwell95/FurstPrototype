@@ -16,5 +16,6 @@ namespace Furst_Alpha_2._0.Models
         public int NextBarcode { get; set; }
 
         public ICollection<Assets> Assets { get; set; }
+        public ICollection<VendorWarehouses> Warehouses { get; set; }
     }
 }

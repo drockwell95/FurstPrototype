@@ -32,6 +32,7 @@ namespace Furst_Alpha_2._0.Models
         public DbSet<Makes> Makes { get; set; }
         public DbSet<Models> Models { get; set; }
         public DbSet<Quantities> Quantities { get; set; }
+        public DbSet<VendorWarehouses> VendorWarehouses { get; set; }
 
         public static ApplicationDbContext Create()
         {

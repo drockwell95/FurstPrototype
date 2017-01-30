@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "StoreLocator";
+}
+
+<h2>StoreLocator</h2>
+
+@using (Html.BeginForm())
+{
+<p>
+    <b>Your Address:</b>
+    @Html.TextBox("address")
+
+    <input type="submit" value="Search!" />
+
+    <br />
+    <i>Example: San Diego, CA</i> or <i>90505</i> or <i>600 Ash St., San Diego</i>
+</p>
+}
+
+@if (ViewData["NoResults"] != null) {
+    <div class="input-validation-error">
+       The address you entered is not known or understood. Try simplifying the address, or enter just a city, region, or postal code...
+    </div>
+}
+
+@{var possibleMatches = ViewData["Matches"] as IEnumerable<string>; }
+@if (possibleMatches != null) {
+    <div style="padding-left: 25px; margin-top: 10px;">
+        <b>Did you mean...</b>
+        <ol>
+            @foreach (var match in possibleMatches) {
+            <li>@Html.ActionLink(match, "StoreLocatorResults", new { Address = match })</li>
+            }
+        </ol>
+    </div>
+}

@@ -25,4 +25,18 @@
             <p>All of the products and equipment you need, all in one place!</p>
             <p><a class="btn btn-default" href="~/Home/Index">Products &raquo;</a></p>
         </div>
+
+        <form>
+            <input type="file" class="upload" size="45" name="file" id="file" accept="image/*capture=camera">
+            <input type="file" accept="image/*;capture=camera">
+        </form>
+
+        <h2>Welcome to the Store Locator (MVC)!</h2>
+        <p>
+            @Html.ActionLink("Find a store near you!", "StoreLocator")
+        </p>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index")</li>
+            <li>@Html.ActionLink("Find a Store!", "StoreLocator")</li>
+        </ul>
     </div>
