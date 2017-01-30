@@ -29,11 +29,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("FURST", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="furstLogoNav">
+                    <a href='@Url.Action("Index", "Home")'><img src='@Url.Content("https://furst.blob.core.windows.net/furst-media/FURST_Logo.jpg")' /> </a>
+                </div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                     <li class="dropdown">
