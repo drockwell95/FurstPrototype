@@ -358,6 +358,7 @@
     <Content Include="Views\Assets\Index2.cshtml" />
     <Content Include="Views\Home\StoreLocator.cshtml" />
     <Content Include="Views\Home\StoreLocatorResults.cshtml" />
+    <Content Include="Views\Vendors\AssetUpload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
