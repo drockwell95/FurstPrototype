@@ -391,6 +391,8 @@ namespace Furst_Alpha_2._0.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+                        //The login test is right here
+                        pushNotification(user.Email, "Hello", "You have logged into Furst Today");
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
@@ -438,6 +440,24 @@ namespace Furst_Alpha_2._0.Controllers
             }
 
             base.Dispose(disposing);
+        }
+
+        private void pushNotification(String email, String subject, String message)
+        {
+            System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
+            msg.Subject = subject;
+            //We can rename this later based on how we want this sent
+            msg.From = new System.Net.Mail.MailAddress("furstemailtest@gmail.com");
+            //Change this to the users email in the account
+            msg.To.Add(new System.Net.Mail.MailAddress(email));
+            msg.Body = message;
+
+            System.Net.Mail.SmtpClient smpt = new System.Net.Mail.SmtpClient();
+            smpt.Host = "smtp.gmail.com";
+            smpt.Port = 587;
+            smpt.EnableSsl = true;
+            smpt.Credentials = new System.Net.NetworkCredential("furstemailtest@gmail.com", "321success");
+            smpt.Send(msg);
         }
 
         #region Helpers
