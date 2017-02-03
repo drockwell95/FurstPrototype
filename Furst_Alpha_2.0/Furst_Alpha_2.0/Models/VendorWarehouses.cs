@@ -17,7 +17,7 @@ namespace Furst_Alpha_2._0.Models
         public string PostalCode { get; set; }
         public decimal Latitude { get; set; }
         public decimal Longitude { get; set; }
-        public Vendors Vendor { get; set; }
+        public virtual Vendors Vendor { get; set; }
     }
 
     

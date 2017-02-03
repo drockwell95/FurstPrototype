@@ -243,6 +243,10 @@
     <Compile Include="Migrations\201701292240042_NearbyVendors.Designer.cs">
       <DependentUpon>201701292240042_NearbyVendors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702030030055_ItsANewDay.cs" />
+    <Compile Include="Migrations\201702030030055_ItsANewDay.Designer.cs">
+      <DependentUpon>201702030030055_ItsANewDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Assets.cs" />
@@ -389,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701292240042_NearbyVendors.resx">
       <DependentUpon>201701292240042_NearbyVendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702030030055_ItsANewDay.resx">
+      <DependentUpon>201702030030055_ItsANewDay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

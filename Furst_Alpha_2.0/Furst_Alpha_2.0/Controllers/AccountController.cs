@@ -58,6 +58,20 @@ namespace Furst_Alpha_2._0.Controllers
             }
         }
 
+        public ActionResult ReturnFromCheckout()
+        {
+            //change values in db
+            //send notifications to top 5
+            // pushNotification(user.Email, "Hello", "You have logged into Furst Today");
+            // pushNotification(user.Email, "Hello", "You have logged into Furst Today");
+            //pushNotification(user.Email, "Hello", "You have logged into Furst Today");
+            // pushNotification(user.Email, "Hello", "You have logged into Furst Today");
+            //pushNotification(user.Email, "Hello", "You have logged into Furst Today");
+
+            //prob need information to be passed from checkout, to construct a more meaningful email
+            return View();
+        }
+
         //
         // GET: /Account/Login
         [AllowAnonymous]

@@ -13,14 +13,13 @@ namespace Furst_Alpha_2._0.Models
     {
         [Key]
         public int AssetId { get; set; }
-        public Vendors Vendor { get; set; }
-        public Categories Category { get; set; }
-        public Types Type { get; set; }
-        public Makes Make { get; set; }
-        public Models Model { get; set; }
+        public virtual Vendors Vendor { get; set; }
+        public virtual Categories Category { get; set; }
+        public virtual Types Type { get; set; }
+        public virtual Makes Make { get; set; }
+        public virtual Models Model { get; set; }
 
         public string Barcode { get; set; }
-        public string Image { get; set; }
         public int YearPurchased { get; set; }
         public double RentalPrice { get; set; }
         public int NumTechsReq { get; set; }

@@ -11,6 +11,7 @@ namespace Furst_Alpha_2._0.Models
         [Key]
         public int ModelId { get; set; }
         public string ModelName { get; set; }
+        public string Image { get; set; }
 
         public ICollection<Assets> Assets { get; set; }
     }

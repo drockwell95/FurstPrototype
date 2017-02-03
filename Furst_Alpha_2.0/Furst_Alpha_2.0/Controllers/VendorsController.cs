@@ -164,15 +164,16 @@ namespace Furst_Alpha_2._0.Controllers
                             input = values[4];
                             asset.Model = context.Models.Single(s => s.ModelName == input);
 
-                            var part1 = (asset.Vendor.VendorId + 1000).ToString();
-                            var part4 = (10000000 + asset.AssetId).ToString();
+                            //var part1 = (asset.Vendor.VendorId + 1000).ToString();
+                            //var part4 = (10000000 + asset.AssetId).ToString();
 
-                            asset.Barcode = part1.Substring(1) + part4.Substring(1);
-                            asset.Image = values[5];
-                            asset.YearPurchased = Convert.ToInt16(values[6]);
-                            asset.RentalPrice = Convert.ToDouble(values[7]);
-                            asset.NumTechsReq = Convert.ToInt16(values[8]);
-                            asset.Availability = Convert.ToBoolean(values[9]);
+                            //asset.Barcode = part1.Substring(1) + part4.Substring(1);
+                            asset.Barcode = asset.Vendor.NextBarcode.ToString();
+                            //asset.Image = values[5];
+                            asset.YearPurchased = Convert.ToInt16(values[5]);
+                            asset.RentalPrice = Convert.ToDouble(values[6]);
+                            asset.NumTechsReq = Convert.ToInt16(values[7]);
+                            asset.Availability = Convert.ToBoolean(values[8]);
                             db.Assets.Add(asset);
                             db.SaveChanges();
                             ViewBag.Message = "File uploaded successfully";
