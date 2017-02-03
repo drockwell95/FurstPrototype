@@ -689,3 +689,4 @@ C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype2\Furst_Alpha_2.0\Furst_Alpha
 C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype2\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.dll
 C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype2\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.pdb
 C:\Users\Kevin.HUGHSTON\Desktop\Git\FurstPrototype11\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.ItsANewDay.resources
+C:\Users\Kevin.HUGHSTON\Desktop\Git\FurstPrototype11\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.HopefullyFixingTheDB.resources

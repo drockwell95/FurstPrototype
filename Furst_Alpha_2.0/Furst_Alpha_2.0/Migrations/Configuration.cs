@@ -69,8 +69,8 @@ namespace Furst_Alpha_2._0.Migrations
                 new Models {ModelId = 31, ModelName = "Mini Foam Cannon - MFC110" },
                 new Models {ModelId = 32, ModelName = "Extreme Foam Machine - EFM110" }
             };
-            //models.ForEach(s => context.Models.AddOrUpdate(p => p.ModelId, s));
-            //context.SaveChanges();
+            models.ForEach(s => context.Models.AddOrUpdate(p => p.ModelId, s));
+            context.SaveChanges();
 
             var makes = new List<Makes>
             {
@@ -86,8 +86,8 @@ namespace Furst_Alpha_2._0.Migrations
                 new Makes {MakeId = 10, MakeName = "Global Special Effects" },
                 new Makes {MakeId = 11, MakeName = "Global Truss" }
             };
-            //makes.ForEach(s => context.Makes.AddOrUpdate(p => p.MakeId, s));
-            //context.SaveChanges();
+            makes.ForEach(s => context.Makes.AddOrUpdate(p => p.MakeId, s));
+            context.SaveChanges();
 
             var types = new List<Types>
             {
@@ -106,8 +106,8 @@ namespace Furst_Alpha_2._0.Migrations
                 new Types {TypeId = 13, TypeName = "Bubble Machine" },
                 new Types {TypeId = 14, TypeName = "Foam Machine" }
             };
-            //types.ForEach(s => context.Types.AddOrUpdate(p => p.TypeId, s));
-            //context.SaveChanges();
+            types.ForEach(s => context.Types.AddOrUpdate(p => p.TypeId, s));
+            context.SaveChanges();
 
             var categories = new List<Categories>
             {
@@ -115,15 +115,15 @@ namespace Furst_Alpha_2._0.Migrations
                 new Categories {CategoryId = 02, CategoryName = "Stage Effects" },
                 new Categories {CategoryId = 03, CategoryName = "Stage Equipment" }
             };
-           // categories.ForEach(s => context.Categories.AddOrUpdate(p => p.CategoryId, s));
-            //context.SaveChanges();
+            categories.ForEach(s => context.Categories.AddOrUpdate(p => p.CategoryId, s));
+            context.SaveChanges();
 
             var vendors = new List<Vendors>
             {
                 new Vendors {VendorId = 01, VendorName = "Atlanta Special FX", NextBarcode = 1 }
             };
             vendors.ForEach(s => context.Vendors.AddOrUpdate(p => p.VendorId, s));
-            //context.SaveChanges();
+            context.SaveChanges();
 
             //var assets = new List<Assets>
             //{
@@ -861,7 +861,7 @@ namespace Furst_Alpha_2._0.Migrations
             {
                 if (!RoleManager.RoleExists(roleName))
                 {
-                    //roleResult = RoleManager.Create(new IdentityRole(roleName));
+                    roleResult = RoleManager.Create(new IdentityRole(roleName));
                 }
             }
 
@@ -939,7 +939,7 @@ namespace Furst_Alpha_2._0.Migrations
 
             };
             warehouses.ForEach(s => context.VendorWarehouses.AddOrUpdate(p => p.VendorWarehouseId, s));
-
+            context.SaveChanges();
 
         }
 

@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Furst_Alpha_2._0.Models;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Data.Entity.Migrations;
 
 namespace Furst_Alpha_2._0.Controllers
 {
@@ -146,41 +148,48 @@ namespace Furst_Alpha_2._0.Controllers
                 {
                     string inputLine = "";
                     ApplicationDbContext context = new ApplicationDbContext();
-                    var input = "";
+
+                    Regex r = new Regex(",(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
                     try
                     {
-                        while ((inputLine = csvReader.ReadLine()) != null)
+                        if ((inputLine = csvReader.ReadLine()) != null)
                         {
-                            string[] values = inputLine.Split(new Char[] { ',' });
-                            Assets asset = new Assets();
-                            input = values[0];
-                            asset.Vendor = context.Vendors.Single(s => s.VendorName == input);
-                            input = values[1];
-                            asset.Category = context.Categories.Single(s => s.CategoryName == input);
-                            input = values[2];
-                            asset.Type = context.Types.Single(s => s.TypeName == input);
-                            input = values[3];
-                            asset.Make = context.Makes.Single(s => s.MakeName == input);
-                            input = values[4];
-                            asset.Model = context.Models.Single(s => s.ModelName == input);
-
-                            //var part1 = (asset.Vendor.VendorId + 1000).ToString();
-                            //var part4 = (10000000 + asset.AssetId).ToString();
-
-                            //asset.Barcode = part1.Substring(1) + part4.Substring(1);
-                            asset.Barcode = asset.Vendor.NextBarcode.ToString();
-                            //asset.Image = values[5];
-                            asset.YearPurchased = Convert.ToInt16(values[5]);
-                            asset.RentalPrice = Convert.ToDouble(values[6]);
-                            asset.NumTechsReq = Convert.ToInt16(values[7]);
-                            asset.Availability = Convert.ToBoolean(values[8]);
-                            db.Assets.Add(asset);
-                            db.SaveChanges();
+                            while ((inputLine = csvReader.ReadLine()) != null)
+                            {
+                                string[] values = r.Split(inputLine);
+                                var temp1 = values[0];
+                                var temp2 = values[1];
+                                var temp3 = values[2];
+                                var temp4 = values[3];
+                                var temp5 = values[4];
+                                var temp6 = values[5];
+                                var temp7 = values[6];
+                                var temp8 = values[7];
+                                var temp9 = values[8];
+                                var temp10 = values[9];
+                                Assets asset = new Assets {
+                                    AssetId = Convert.ToInt32(temp1),
+                                    VendorId = context.Vendors.First(s => s.VendorName == temp2).VendorId,
+                                    CategoryId = context.Categories.First(s => s.CategoryName == temp3).CategoryId,
+                                    TypeId = context.Types.First(s => s.TypeName == temp4).TypeId,
+                                    MakeId = context.Makes.First(s => s.MakeName == temp5).MakeId,
+                                    ModelId = context.Models.First(s => s.ModelName == temp6).ModelId,
+                                    //Barcode = context.Vendors.First(s => s.VendorName == temp2).NextBarcode.ToString(),
+                                    Barcode = temp1,
+                                    YearPurchased = Convert.ToInt16(temp7),
+                                    RentalPrice = Convert.ToDouble(temp8),
+                                    NumTechsReq = Convert.ToInt16(temp9),
+                                    Availability = Convert.ToBoolean(temp10)
+                                };
+                                context.Assets.AddOrUpdate(p => p.Barcode, asset);
+                                context.SaveChanges();
+                                ViewBag.Message = "Partial Input loaded, please contact the developers.";
+                            }
+                            csvReader.Close();
                             ViewBag.Message = "File uploaded successfully";
                         }
-                        csvReader.Close();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         return AssetUpload();
                     }

@@ -10,6 +10,11 @@ namespace Furst_Alpha_2._0.Models
     {
         [Key]
         public int QuantityId { get; set; }
+
+        public int VendorId { get; set; }
+        public int MakeId { get; set; }
+        public int ModelId { get; set; }
+
         public virtual Vendors Vendor { get; set; }
         public virtual Makes Make { get; set; }
         public virtual Models Model { get; set; }
