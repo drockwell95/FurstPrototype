@@ -6,7 +6,7 @@
 
 @{var imagesrc = "https://midatlanticskinsurgery.com/wp-content/uploads/2016/08/Product-Coming-Soon-image-600x600.png";}
 
-<h2>Index</h2>
+<h2>Fürst Products</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -41,8 +41,9 @@
             <img src="@imagesrc" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Make) @Html.DisplayFor(modelItem => item.Model)
             <ul>
+                <li>Make: @Html.DisplayFor(modelItem => item.Make.MakeName)</li>
+                <li>Model: @Html.DisplayFor(modelItem => item.Model.ModelName)</li>
                 <li>Year: @Html.DisplayFor(modelItem => item.YearPurchased)</li>
                 <li>Number of Technicians Required: @Html.DisplayFor(modelItem => item.NumTechsReq)</li>
             </ul>

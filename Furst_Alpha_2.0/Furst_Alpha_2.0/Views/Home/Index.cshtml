@@ -3,36 +3,36 @@
 }
 <body>
     <div class="jumbotron furstLogo col-lg-12">
-        
+
         <img src="https://furst.blob.core.windows.net/furst-media/FURST_Logo.jpg" alt="" />
-        
-        <p class="lead">Your FURST source for all your event needs.</p>
+
+        <p class="lead">Your Fürst source for all your event needs.</p>
 
     </div>
 
     <div class="row furstProducts col-lg-12">
-            <img src="https://furst.blob.core.windows.net/furst-media/1500SnowMachine.png" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/3sGerb.png" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/6LGerb.png" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/BubbleKing.jpg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/DNG.jpeg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/ExtremeFoamMachine.jpg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/FoamMonster.jpg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/G300_Hazer.jpeg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/Haze%202D.jpeg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/Ice_101.gif" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/MiniFoamCannon.jpg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/MK2G300.jpeg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/NPC.jpeg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/NPG.jpeg" alt="" />
-            <img src="https://furst.blob.core.windows.net/furst-media/SNG.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/1500SnowMachine.png" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/3sGerb.png" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/6LGerb.png" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/BubbleKing.jpg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/DNG.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/ExtremeFoamMachine.jpg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/FoamMonster.jpg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/G300_Hazer.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/Haze%202D.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/Ice_101.gif" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/MiniFoamCannon.jpg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/MK2G300.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/NPC.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/NPG.jpeg" alt="" />
+        <img src="https://furst.blob.core.windows.net/furst-media/SNG.jpeg" alt="" />
     </div>
 
     <div class="row">
         <div class="col-md-4">
             <h2>Just getting started?</h2>
             <p>
-                Sign up today to start using the power of FURST, and simplify your event planning!
+                Sign up today to start using the power of Fürst, and simplify your event planning!
             </p>
             <p><a class="btn btn-default" href="~/Account/Register">Register &raquo;</a></p>
         </div>
@@ -60,6 +60,11 @@
             <ul>
                 <li>@Html.ActionLink("Home", "Index")</li>
                 <li>@Html.ActionLink("Find a Store!", "StoreLocator")</li>
+                @if (User.IsInRole("Vendor"))
+                {
+                    <li>@Html.ActionLink("Upload Assets", "AssetUpload", "Vendors")</li>
+                }
+
             </ul>
         </div>
     </div>

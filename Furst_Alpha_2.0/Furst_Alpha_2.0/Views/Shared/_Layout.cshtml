@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <script type = 'text/javascript' >
+    <script type='text/javascript'>
         var appInsights=window.appInsights||function(config)
         {
             function r(config){ t[config] = function(){ var i = arguments; t.queue.push(function(){ t[config].apply(t, i)})} }
@@ -15,7 +15,7 @@
         }({
             instrumentationKey:'59527a74-d33a-47d8-a811-89d54fae07f9'
         });
-        
+
         window.appInsights=appInsights;
         appInsights.trackPageView();
     </script>
@@ -37,17 +37,18 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("1st Product", "Index", "Home")</li>
-                            <li>@Html.ActionLink("2nd Product", "Index", "Home")</li>
-                            <li>@Html.ActionLink("3rd Product", "Index", "Home")</li>
-                            <li>@Html.ActionLink("4th Product", "Index", "Home")</li>
-                            <li>@Html.ActionLink("5th Product", "Index", "Home")</li>
-                            <li>@Html.ActionLink("6th Product", "Index", "Home")</li>
-                        </ul>
-                    </li>
+                    <li>@Html.ActionLink("Products", "Index", "Assets")</li>
+                    @*<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("1st Product", "Index", "Home")</li>
+                                <li>@Html.ActionLink("2nd Product", "Index", "Home")</li>
+                                <li>@Html.ActionLink("3rd Product", "Index", "Home")</li>
+                                <li>@Html.ActionLink("4th Product", "Index", "Home")</li>
+                                <li>@Html.ActionLink("5th Product", "Index", "Home")</li>
+                                <li>@Html.ActionLink("6th Product", "Index", "Home")</li>
+                            </ul>
+                        </li>*@
                     <li><p><a class="btn btn-emergency" href="~/Home/Index">EMERGENCY &raquo;</a></p></li>
                 </ul>
                 @Html.Partial("_LoginPartial")
