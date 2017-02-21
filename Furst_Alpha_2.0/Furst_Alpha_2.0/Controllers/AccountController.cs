@@ -460,6 +460,10 @@ namespace Furst_Alpha_2._0.Controllers
             smpt.Send(msg);
         }
 
+
+
+
+
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
@@ -519,4 +523,6 @@ namespace Furst_Alpha_2._0.Controllers
         }
         #endregion
     }
+
+
 }
