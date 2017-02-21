@@ -884,3 +884,14 @@ C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype3\Furst_Alpha_2.0\Furst_Alpha
 C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype3\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.csproj.GenerateResource.Cache
 C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype3\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.dll
 C:\Users\daniel.HUGHSTON\Desktop\Git\FurstPrototype3\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.pdb
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.csprojResolveAssemblyReference.cache
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.Initial.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.NewBarcode.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.AddWarehouses.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.WarehouseDataTypeChange.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.NearbyVendors.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.ItsANewDay.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2._0.Migrations.HopefullyFixingTheDB.resources
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.csproj.GenerateResource.Cache
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.dll
+C:\Users\Baymax\Desktop\GitHub\Pull2_20\Furst_Alpha_2.0\Furst_Alpha_2.0\obj\Debug\Furst_Alpha_2.0.pdb
